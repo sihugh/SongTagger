@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{B3CD2B40-F9BC-49FC-86C7-17DAE0C6EF37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SongTagger.Hughesdon", "SongTagger.Hughesdon\SongTagger.Hughesdon.csproj", "{3DF554B0-8DF7-46BE-BA15-E1DDB13FD055}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SongTagger.Hughesdon.Tests", "SongTagger.Hughesdon.Tests\SongTagger.Hughesdon.Tests.csproj", "{6050B5CE-CA54-4D71-8548-88C2F7DC6989}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{812C659E-7209-4091-8033-3DAEAD7200CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DF554B0-8DF7-46BE-BA15-E1DDB13FD055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DF554B0-8DF7-46BE-BA15-E1DDB13FD055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DF554B0-8DF7-46BE-BA15-E1DDB13FD055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DF554B0-8DF7-46BE-BA15-E1DDB13FD055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6050B5CE-CA54-4D71-8548-88C2F7DC6989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6050B5CE-CA54-4D71-8548-88C2F7DC6989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6050B5CE-CA54-4D71-8548-88C2F7DC6989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6050B5CE-CA54-4D71-8548-88C2F7DC6989}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3DF554B0-8DF7-46BE-BA15-E1DDB13FD055} = {B3CD2B40-F9BC-49FC-86C7-17DAE0C6EF37}
+		{6050B5CE-CA54-4D71-8548-88C2F7DC6989} = {812C659E-7209-4091-8033-3DAEAD7200CD}
+	EndGlobalSection
+EndGlobal
