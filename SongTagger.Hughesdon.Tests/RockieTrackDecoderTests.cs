@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using SongTagger.Hughesdon.TitleFormats;
 
 namespace SongTagger.Hughesdon.Tests
 {
     [TestFixture]
-    public class TagExtractorTests
+    public class RockieTrackDecoderTests
     {
         [TestCase("Livin' On A Prayer Full Choir.mp3", "Livin' On A Prayer", "Full Choir")]
         [TestCase("PROUD Full Choir (2012-13 New Mix Feb 13).mp3", "Proud", "Full Choir")]
@@ -18,10 +19,10 @@ namespace SongTagger.Hughesdon.Tests
         [TestCase("You're So Vain SOPRANO.mp3", "You're So Vain", "Soprano")]
         [TestCase("Livin' On A Prayer - Bass.mp3", "Livin' On A Prayer", "Bass")]
         [Test]
-        public void NameParser_StandardName_ExtractsTitleAndPart(string filename, string title, string part)
+        public void DecodeRockieTrackTitle_KnownTitles_ExtractsTitleAndPart(string filename, string title, string part)
         {
-            var parser = new NameTagger();
-            var properties = parser.DecodeSongProperties(filename);
+            var parser = new RockieTrackDecoder();
+            var properties = parser.DecodeSongTitle(filename);
 
             Assert.AreEqual(title, properties.Title);
             Assert.AreEqual(part, properties.Part);

@@ -47,10 +47,9 @@
   <ItemGroup>
     <Compile Include="Constants\SearchPatterns.cs" />
     <Compile Include="Constants\Title.cs" />
-    <Compile Include="NameTagger.cs" />
+    <Compile Include="TitleFormats\RockieTrackDecoder.cs" />
     <Compile Include="SongProperties.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="TagExtractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

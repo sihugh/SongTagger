@@ -2,13 +2,13 @@ using System;
 using SongTagger.Hughesdon.Constants;
 using SongTagger.Hughesdon.Extensions;
 
-namespace SongTagger.Hughesdon
+namespace SongTagger.Hughesdon.TitleFormats
 {
-    public class NameTagger
+    public class RockieTrackDecoder
     {
         readonly string[] _voiceParts = "Full Choir,Upper Alto,Lower Alto,Alto,Upper Bass,Lower Bass,Bass,Upper Soprano,Lower Soprano,Soprano".Split(',');
 
-        public SongProperties DecodeSongProperties(string filename)
+        public SongProperties DecodeSongTitle(string filename)
         {
             foreach (string voicePart in _voiceParts)
             {
