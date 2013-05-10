@@ -6,6 +6,7 @@ namespace SongTagger.Hughesdon
 
         public string Part { get; set; }
 
-        
+        public int Year { get; set; }
+
     }
 }

@@ -8,7 +8,7 @@ namespace SongTagger.Hughesdon.TitleFormats
     {
         readonly string[] _voiceParts = "Full Choir,Upper Alto,Lower Alto,Alto,Upper Bass,Lower Bass,Bass,Upper Soprano,Lower Soprano,Soprano".Split(',');
 
-        public SongProperties DecodeSongTitle(string filename)
+        public SongProperties DecodeFileTitle(string filename)
         {
             foreach (string voicePart in _voiceParts)
             {
@@ -19,12 +19,26 @@ namespace SongTagger.Hughesdon.TitleFormats
 
                     var songPart = ExtractSongPart(filename, indexOfPart, voicePart);
 
-                    var props = new SongProperties {Part = songPart, Title = title};
+                    int year = ExtractSongYear(filename);
+
+                    var props = new SongProperties {Part = songPart, Title = title, Year = year};
                     return props;
                 }
 
             }
             return new SongProperties {Title = filename, Part = ""};
+        }
+
+        private int ExtractSongYear(string filename)
+        {
+            if (filename.IndexOf("2012") > 0)
+            {
+                return 2012;
+            }
+            else
+            {
+                return 2013;
+            }
         }
 
         private static string ExtractSongPart(string filename, int indexOfPart, string voicePart)
