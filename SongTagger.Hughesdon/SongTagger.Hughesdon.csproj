@@ -36,9 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="taglib-sharp">
       <HintPath>..\packages\taglib.2.1.0.0\lib\taglib-sharp.dll</HintPath>
@@ -47,13 +45,19 @@
   <ItemGroup>
     <Compile Include="Constants\SearchPatterns.cs" />
     <Compile Include="Constants\Title.cs" />
-    <Compile Include="TitleFormats\RockieTrackDecoder.cs" />
+    <Compile Include="PropertyApplier.cs" />
+    <Compile Include="Decoders\RockieTrackDecoder.cs" />
     <Compile Include="SongProperties.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TitleFormatters\TitleFormatter.cs" />
+    <Compile Include="TrackTagger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

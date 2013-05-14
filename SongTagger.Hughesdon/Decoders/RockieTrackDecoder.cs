@@ -2,12 +2,15 @@ using System;
 using SongTagger.Hughesdon.Constants;
 using SongTagger.Hughesdon.Extensions;
 
-namespace SongTagger.Hughesdon.TitleFormats
+namespace SongTagger.Hughesdon.Decoders
 {
     public class RockieTrackDecoder
     {
-        readonly string[] _voiceParts = "Full Choir,Upper Alto,Lower Alto,Alto,Upper Bass,Lower Bass,Bass,Upper Soprano,Lower Soprano,Soprano".Split(',');
+        readonly string[] _voiceParts = "Full Choir,Upper Alto,Lower Alto,Alto,Upper Bass,Lower Bass,Bass,Upper Soprano,Lower Soprano,Soprano,Sop".Split(',');
 
+        private const string ArtistName = "Rock Choir";
+        private const string AlbumTitle = "Rock Choir Tracks";
+  
         public SongProperties DecodeFileTitle(string filename)
         {
             foreach (string voicePart in _voiceParts)
@@ -21,7 +24,7 @@ namespace SongTagger.Hughesdon.TitleFormats
 
                     int year = ExtractSongYear(filename);
 
-                    var props = new SongProperties {Part = songPart, Title = title, Year = year};
+                    var props = new SongProperties {Part = songPart, Title = title, Year = year, AlbumTitle = AlbumTitle, Artist = ArtistName};
                     return props;
                 }
 
@@ -31,14 +34,11 @@ namespace SongTagger.Hughesdon.TitleFormats
 
         private int ExtractSongYear(string filename)
         {
-            if (filename.IndexOf("2012") > 0)
+            if (filename.IndexOf("2012", StringComparison.Ordinal) > 0)
             {
                 return 2012;
             }
-            else
-            {
-                return 2013;
-            }
+            return 2013;
         }
 
         private static string ExtractSongPart(string filename, int indexOfPart, string voicePart)

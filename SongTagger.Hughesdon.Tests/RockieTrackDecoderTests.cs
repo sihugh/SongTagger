@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using SongTagger.Hughesdon.TitleFormats;
+using SongTagger.Hughesdon.Decoders;
 
 namespace SongTagger.Hughesdon.Tests
 {
@@ -14,15 +14,14 @@ namespace SongTagger.Hughesdon.Tests
         [TestCase("You're So Vain SOPRANO.mp3", "You're So Vain")]
         [TestCase("Livin' On A Prayer - Bass.mp3", "Livin' On A Prayer")]
         [Test]
-        public void DecodeRockieTrackTitle_KnownTitles_ExtractsTitle(string filename, string title)
+        public void DecodeFileTitle_KnownTitles_ExtractsTitle(string filename, string title)
         {
             var parser = new RockieTrackDecoder();
             var properties = parser.DecodeFileTitle(filename);
 
             Assert.AreEqual(title, properties.Title);
         }
-
-
+        
 
         [TestCase("Livin' On A Prayer Full Choir.mp3", "Full Choir")]
         [TestCase("PROUD Full Choir (2012-13 New Mix Feb 13).mp3", "Full Choir")]
@@ -32,7 +31,7 @@ namespace SongTagger.Hughesdon.Tests
         [TestCase("You're So Vain SOPRANO.mp3", "Soprano")]
         [TestCase("Livin' On A Prayer - Bass.mp3", "Bass")]
         [Test]
-        public void DecodeRockieTrackTitle_KnownTitles_ExtractsPart(string filename, string part)
+        public void DecodeFileTitle_KnownTitles_ExtractsPart(string filename, string part)
         {
             var parser = new RockieTrackDecoder();
             var properties = parser.DecodeFileTitle(filename);
@@ -43,12 +42,24 @@ namespace SongTagger.Hughesdon.Tests
         [TestCase("HOW DEEP IS YOUR LOVE Alto (2012_13).mp3", 2012)]
         [TestCase("Livin' On A Prayer - Bass.mp3", 2013)]
         [Test]
-        public void DecodeRockieTrackTitle_KnownTitles_ExtractsYear(string filename, int year)
+        public void DecodeFileTitle_KnownTitles_ExtractsYear(string filename, int year)
         {
             var parser = new RockieTrackDecoder();
             var properties = parser.DecodeFileTitle(filename);
 
             Assert.AreEqual(year, properties.Year);
+        }
+
+        [Test]
+        public void DecodeFileTitle_KnownTitles_SetsArtist()
+        {
+            string knownTrackTitle = "Livin' On A Prayer - Bass.mp3";
+            string expectedArtist = "Rock Choir";
+
+            var parser = new RockieTrackDecoder();
+            var properties = parser.DecodeFileTitle(knownTrackTitle);
+
+            Assert.AreEqual(expectedArtist, properties.Artist);
         }
     }
 }
