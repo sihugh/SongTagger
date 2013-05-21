@@ -13,11 +13,13 @@ namespace SongTagger.Hughesdon
             get { return _part; }
             set
             {
-                if (value.Equals("sop", StringComparison.OrdinalIgnoreCase))
-                {
-                    _part = "Soprano";
-                }
-                else if (value.EndsWith("sop", StringComparison.OrdinalIgnoreCase))
+                //if (value.Equals("sop", StringComparison.OrdinalIgnoreCase))
+                //{
+                //    _part = "Soprano";
+                //}
+                //else 
+
+                if (value.EndsWith("sop", StringComparison.OrdinalIgnoreCase))
                 {
                     _part = value.Substring(0, value.Length - 3) + "Soprano";
                 }
