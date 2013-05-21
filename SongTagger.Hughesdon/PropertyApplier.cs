@@ -9,16 +9,19 @@ namespace SongTagger.Hughesdon
     {
         public void ApplyMetadata(FileInfo mediaFile, SongProperties properties)
         {
+            var formatter = new TitleFormatters.TitleFormatter(properties);
+
+            var trackData = formatter.GetProperties();
+
             using (TagLib.File file = new AudioFile(mediaFile.FullName))
             {
-                var formatter = new TitleFormatters.TitleFormatter(properties);
-
-                file.Tag.Pictures = new IPicture[]{new Picture(@"c:\temp\pic.jpg")};
-                file.Tag.Album = formatter.GetAlbumTitle();
-                file.Tag.Title = formatter.GetTitle();
-                file.Tag.Year = formatter.GetYear();
-                file.Tag.AlbumArtists = new[]{formatter.GetArtist()};
-                file.Tag.Comment = formatter.GetComment();
+                
+                file.Tag.Pictures = trackData.Pictures;
+                file.Tag.Album = trackData.AlbumTitle;
+                file.Tag.Title = trackData.Title;
+                file.Tag.Year = trackData.Year;
+                file.Tag.AlbumArtists = trackData.Artists;
+                file.Tag.Comment = trackData.Comment;
                 file.Tag.Genres = new[] {"Pop, Gospel, Motown"};
                 file.Save();
             }

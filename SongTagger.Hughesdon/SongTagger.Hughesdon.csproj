@@ -51,6 +51,7 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TitleFormatters\TitleFormatter.cs" />
+    <Compile Include="TrackData.cs" />
     <Compile Include="TrackTagger.cs" />
   </ItemGroup>
   <ItemGroup>

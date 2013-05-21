@@ -6,7 +6,7 @@ namespace SongTagger.Hughesdon.Decoders
 {
     public class RockieTrackDecoder
     {
-        readonly string[] _voiceParts = "Full Choir,Upper Alto,Lower Alto,Alto,Upper Bass,Lower Bass,Bass,Upper Soprano,Lower Soprano,Soprano,Sop".Split(',');
+        readonly string[] _voiceParts = "Full Choir With Solo,Full Choir,Upper Alto,Lower Alto,Alto,Upper Bass,Lower Bass,Bass,Upper Soprano,Lower Soprano,Soprano,Upper Sop,Lower Sop,Sop".Split(',');
 
         private const string ArtistName = "Rock Choir";
         private const string AlbumTitle = "Rock Choir Tracks";

@@ -17,6 +17,10 @@ namespace SongTagger.Hughesdon
                 {
                     _part = "Soprano";
                 }
+                else if (value.EndsWith("sop", StringComparison.OrdinalIgnoreCase))
+                {
+                    _part = value.Substring(0, value.Length - 3) + "Soprano";
+                }
                 else
                 {
                     _part = value;

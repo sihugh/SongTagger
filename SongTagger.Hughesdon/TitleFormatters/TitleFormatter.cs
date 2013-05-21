@@ -1,18 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TagLib;
 
 namespace SongTagger.Hughesdon.TitleFormatters
 {
     public class TitleFormatter
     {
-        private SongProperties _properties;
+        private readonly SongProperties _properties;
 
         public TitleFormatter(SongProperties properties)
         {
             _properties = properties;
+        }
+
+        public TrackData GetProperties()
+        {
+            var data = new TrackData
+                {
+                    Title = GetTitle(),
+                    AlbumTitle = GetAlbumTitle(),
+                    Artists = GetArtists(),
+                    Comment = GetComment(),
+                    Genre = GetGenre(),
+                    Pictures = GetPicture(),
+                    Year = GetYear()
+                };
+            return data;
+        }
+
+        private string[] GetGenre()
+        {
+            return new []{"Pop, Rock, Motown"};
+        }
+
+        private IPicture[] GetPicture()
+        {
+            return new IPicture[]
+                {
+                    new Picture(@"c:\temp\pic.jpg")
+                };
         }
 
         public string GetTitle()
@@ -25,9 +49,9 @@ namespace SongTagger.Hughesdon.TitleFormatters
             return _properties.AlbumTitle;
         }
 
-        public string GetArtist()
+        public string[] GetArtists()
         {
-            return _properties.Artist;
+            return new[]{_properties.Artist};
         }
 
         public uint GetYear()

@@ -11,7 +11,7 @@ namespace SongTagger.Hughesdon.Tests
     class TrackTaggerTests
     {
         [Test]
-        public void GetMp3Files_Something()
+        public void GetMp3Files_EnsureAllAreMp3s()
         {
             var files = TrackTagger.GetMp3Files(@"c:\temp\before");
             foreach (var file in files)
