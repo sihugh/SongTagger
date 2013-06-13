@@ -13,6 +13,7 @@ namespace SongTagger.Hughesdon.Tests
         [TestCase("HOW DEEP IS YOUR LOVE Alto (2012_13).mp3", "How Deep Is Your Love")]
         [TestCase("You're So Vain SOPRANO.mp3", "You're So Vain")]
         [TestCase("Livin' On A Prayer - Bass.mp3", "Livin' On A Prayer")]
+        [TestCase("YOU'VE LOST THAT LOVING FEELING Medium (MEN ONLY).mp3", "You've Lost That Loving Feeling")]
         [Test]
         public void DecodeFileTitle_KnownTitles_ExtractsTitle(string filename, string title)
         {
@@ -30,6 +31,7 @@ namespace SongTagger.Hughesdon.Tests
         [TestCase("HOW DEEP IS YOUR LOVE Alto (2012_13).mp3", "Alto")]
         [TestCase("You're So Vain SOPRANO.mp3", "Soprano")]
         [TestCase("Livin' On A Prayer - Bass.mp3", "Bass")]
+        [TestCase("YOU'VE LOST THAT LOVING FEELING Medium (MEN ONLY).mp3", "Middle Bass")]
         [Test]
         public void DecodeFileTitle_KnownTitles_ExtractsPart(string filename, string part)
         {

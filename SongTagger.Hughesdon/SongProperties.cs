@@ -23,6 +23,10 @@ namespace SongTagger.Hughesdon
                 {
                     _part = value.Substring(0, value.Length - 3) + "Soprano";
                 }
+                else if (value.Equals("medium", StringComparison.OrdinalIgnoreCase))
+                {
+                    _part = "Middle Bass";
+                }
                 else
                 {
                     _part = value;
