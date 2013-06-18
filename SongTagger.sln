@@ -11,6 +11,34 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{812C659E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SongTagger", "SongTagger\SongTagger.csproj", "{D380B5E4-5415-4971-824B-1849B3B59060}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{83138738-E330-437B-ABE4-8545ED634A7F}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\temp\songs.js = ..\..\..\..\..\temp\songs.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Site", "Site", "{E3B6D4EF-4E37-4500-9147-035C8F149F4C}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "http://localhost:2862", "{F69ED5F2-4F0D-4C00-8BA8-B1C5A87C0DC8}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Website"
+		Debug.AspNetCompiler.PhysicalPath = "Website\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Website\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Website"
+		Release.AspNetCompiler.PhysicalPath = "Website\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Website\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Website\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +57,10 @@ Global
 		{D380B5E4-5415-4971-824B-1849B3B59060}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D380B5E4-5415-4971-824B-1849B3B59060}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D380B5E4-5415-4971-824B-1849B3B59060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F69ED5F2-4F0D-4C00-8BA8-B1C5A87C0DC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F69ED5F2-4F0D-4C00-8BA8-B1C5A87C0DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F69ED5F2-4F0D-4C00-8BA8-B1C5A87C0DC8}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F69ED5F2-4F0D-4C00-8BA8-B1C5A87C0DC8}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,5 +69,6 @@ Global
 		{3DF554B0-8DF7-46BE-BA15-E1DDB13FD055} = {B3CD2B40-F9BC-49FC-86C7-17DAE0C6EF37}
 		{D380B5E4-5415-4971-824B-1849B3B59060} = {B3CD2B40-F9BC-49FC-86C7-17DAE0C6EF37}
 		{6050B5CE-CA54-4D71-8548-88C2F7DC6989} = {812C659E-7209-4091-8033-3DAEAD7200CD}
+		{F69ED5F2-4F0D-4C00-8BA8-B1C5A87C0DC8} = {E3B6D4EF-4E37-4500-9147-035C8F149F4C}
 	EndGlobalSection
 EndGlobal
