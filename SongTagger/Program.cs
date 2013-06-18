@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using ServiceStack.Text;
 using SongTagger.Hughesdon;
 
 namespace SongTagger
@@ -23,10 +25,12 @@ namespace SongTagger
             trackTagger.PrepareTrackMapping(BeforeFolderPath);
 
             var propertyApplier = new PropertyApplier();
+            var songPropertyCollection = new List<SongProperties>();
+
             foreach (var songPath in trackTagger.PropertyMapper.Keys)
             {
                 var songProperties = trackTagger.PropertyMapper[songPath];
-
+                songPropertyCollection.Add(songProperties);
                 if (string.IsNullOrWhiteSpace(songProperties.Artist))
                     continue;
 
@@ -39,9 +43,13 @@ namespace SongTagger
                 File.Copy(songPath, afterFilePath, true);
 
                 var afterFile = new FileInfo(afterFilePath);
-
+                
                 Console.WriteLine("Applying properties to {0}", afterFile.FullName);
                 propertyApplier.ApplyMetadata(afterFile, songProperties);
+            }
+            using (var output = new StreamWriter(@"c:\temp\serialized.txt", true))
+            {
+                output.Write(songPropertyCollection.ToJson());
             }
         }
     }

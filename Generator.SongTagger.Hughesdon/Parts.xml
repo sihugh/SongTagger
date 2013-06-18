@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parts>
+  <part>
+    <name>Upper Soprano</name>
+    <id>D00ED7A6-D6B7-4D18-BB9D-D11AC2C3111E</id>
+    <synonym>Upper Sop</synonym>
+  </part>
+  <part>
+    <name>Lower Soprano</name>
+    <id>4E803FAA-0FB1-4D85-8028-E63ED36AEECA</id>
+    <synonym>Lower Sop</synonym>
+  </part>
+  <part>
+    <name>Soprano</name>
+    <id>AF8C0C8A-17F2-4B9D-9EA3-8787175DA47B</id>
+    <synonym>Sop</synonym>
+  </part>
+  <part>
+    <name>Upper Alto</name>
+    <id>375EF4F5-A70D-49BC-9B45-827F666D7C70</id>
+  </part>
+  <part>
+    <name>Lower Alto</name>
+    <id>5558A2D7-4BD7-4701-82EF-8094EEF612A1</id>
+  </part>
+  <part>
+    <name>Alto</name>
+    <id>05276B3A-0CD2-4010-A5CB-33D91774B095</id>
+  </part>
+  <part>
+    <name>Upper Bass</name>
+    <id>2B7B8531-2419-480D-A911-8EB68F03C70A</id>
+  </part>
+  <part>
+    <name>Lower Bass</name>
+    <id>64C511BD-4551-421D-B884-C078573C8F58</id>
+  </part>
+  <part>
+    <name>Bass</name>
+    <id>C6C87B3A-2AF2-4E26-AD12-17356074FFF1</id>
+  </part>
+  <part>
+    <name>Backing Track</name>
+    <id>4434052F-E437-4B6B-9E13-1C423F00E503</id>
+  </part>
+  <part>
+    <name>Full Choir</name>
+    <id>57599414-A5AB-4441-96EB-BF130B979A4E</id>
+    <synonym>Whole Choir</synonym>
+  </part>
+</parts>

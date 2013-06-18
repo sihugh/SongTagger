@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D380B5E4-5415-4971-824B-1849B3B59060}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{571468B4-3C36-4A83-8D93-714BBEBE703E}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SongTagger</RootNamespace>
-    <AssemblyName>SongTagger</AssemblyName>
+    <RootNamespace>Generator.Songtagger.Hughesdon.Tests</RootNamespace>
+    <AssemblyName>Generator.Songtagger.Hughesdon.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,46 +30,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ServiceStack">
-      <HintPath>..\packages\ServiceStack.3.9.49\lib\net35\ServiceStack.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Common">
-      <HintPath>..\packages\ServiceStack.Common.3.9.49\lib\net35\ServiceStack.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Interfaces">
-      <HintPath>..\packages\ServiceStack.Common.3.9.49\lib\net35\ServiceStack.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.OrmLite">
-      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.3.9.49\lib\ServiceStack.OrmLite.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.OrmLite.SqlServer">
-      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.3.9.49\lib\ServiceStack.OrmLite.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Redis">
-      <HintPath>..\packages\ServiceStack.Redis.3.9.51\lib\net35\ServiceStack.Redis.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.ServiceInterface">
-      <HintPath>..\packages\ServiceStack.3.9.49\lib\net35\ServiceStack.ServiceInterface.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Text">
-      <HintPath>..\packages\ServiceStack.Text.3.9.49\lib\net35\ServiceStack.Text.dll</HintPath>
+    <Reference Include="nunit.framework">
+      <HintPath>..\Generator.SongTagger.Hughesdon\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="XmlParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SongTagger.Hughesdon\SongTagger.Hughesdon.csproj">
-      <Project>{3df554b0-8df7-46be-ba15-e1ddb13fd055}</Project>
-      <Name>SongTagger.Hughesdon</Name>
+    <ProjectReference Include="..\Generator.SongTagger.Hughesdon\Generator.SongTagger.Hughesdon.csproj">
+      <Project>{bc56d528-5c5f-4b5c-aafd-1fce1a508a68}</Project>
+      <Name>Generator.SongTagger.Hughesdon</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
