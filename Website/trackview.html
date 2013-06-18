@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Rock Choir Track Information</title>
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
+        <script src="/scripts/jquery-1.10.1.js"></script>
+        <!--<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>-->
+        <script src="/scripts/handlebars.js"></script>
+        <link href="/css/reset.css" rel="stylesheet">
+        <link href="/css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="body">
+        <div class="header">
+             <h1>Rock Choir Track Information</h1>
+            <p>
+                This is not an exhaustive list of tracks
+            </p>
+        </div>
+        
+        <div class="content" id="trackplaceholder"></div>
+        <div class="content" id="disclaimer">
+            <p>
+                This site is not officially supported or sanctioned by Rock Choir, but is intended to be beneficial to its members by providing a means of applying a consistent set of track data to the downloads.
+            </p>
+        </div>
+        <script id="track-template" type="text/x-handlebars-template">
+        <div id="{{Title}}-{{Part}}">
+            <div class="tracktitle">
+                <h3>{{Title}} - {{Part}}</h3>
+            </div>
+            <ul class="songproperties">
+                <li class="songTitle">Song Title: {{Title}}</li>
+                <li class="part">Voice Part: {{Part}}</li>
+                <li class="albumTitle">Album: {{AlbumTitle}}</li>
+                <li class="artist">Artist: {{Artist}}</li>
+                <li class="year">Year: {{Year}}</li>
+                <li class="description">Description: {{Description}}</li>
+            </ul>
+        </div>
+        </script>
+        <div id="{{Title}}-{{Part}}">
+            <h2>{{Title}} - {{Part}}</h2>
+            <ul class="songproperties">
+                <li class="albumTitle">Album: {{AlbumTitle}}</li>
+                <li class="artist">Artist: {{Artist}}</li>
+                <li class="year">Year: {{Year}}</li>
+                <li class="description">Description: {{Description}}</li>
+            </ul>
+        </div>
+        </div>
+        <script src="/js/trackview.js"></script>
+    </body>
+
+    
+</html>

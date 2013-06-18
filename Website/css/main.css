@@ -1,0 +1,40 @@
+html{
+    padding-top: 10px;
+    background-color: #06266F;
+    background: url("/images/rockienoise.png"), radial-gradient(at center top , #2A4480, #06266F 750px);
+}
+
+#body {
+    background-color: #06266F;
+    color: #FFAA00;
+    font-family: Helvetica, sans-serif;
+}
+
+h1{
+    font-size: 20px;
+}
+
+h3{
+    font-size: 16px;
+    margin: 24px 0 10px 0;    
+    border-bottom:  3px solid #06266F;
+}
+
+.header{
+    height:  200px;
+    color: #f1eca7;
+}
+
+
+.content{
+    -moz-box-orient: vertical;
+    background-color: #1240AB;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 10px #2A4480;
+    display: -moz-box;
+    padding: 20px;
+    position: relative;
+    top: -20px;
+    width: 725px;
+    z-index: 2;
+}
