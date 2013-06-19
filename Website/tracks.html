@@ -71,29 +71,14 @@
 
             <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="hero-unit">
-                <h1>Rockie Song Tagger</h1>
-                <p>The practice MP3 files that are downloadable from the Rock Choir web site have a range of naming formats, cases and voice part conventions. Some have images associated with them and they tend not to have album titles or genres set.  This doesn't work terribly well in music player applications such as Windows Media Player, iTunes etc. as it is difficult to identify the songs and create playlists from them</p>
-                <p>This app will set the song tags on your Rockie downloads so that they look right!</p>
-                <p><a class="btn btn-primary btn-large" href="app.html">Learn more &raquo;</a></p>
-            </div>
+                <h1>Track Listing</h1>
+                <p>Here is a listing of all of the tracks currently supported by the app (they are the only ones I've seen so far!).</p>
+                <p>This list contains the information that the app will set on your MP3 files to make them more useful.</p>
+            
+                
+            <div id="trackplaceholder">
 
-            <!-- Example row of columns -->
-            <div class="row">
-                <div class="span4">
-                    <h2>The App</h2>
-                    <p>A app to sort out the song details on your Rock Choir download tracks so that they look consistent in your media player.  It will also set a cover picture, album title, year and genre on the songs so that they can be easily found in your media player. </p>
-                    <p><a class="btn" href="app.html">View details &raquo;</a></p>
-                </div>
-                <div class="span4">
-                    <h2>Track Listing</h2>
-                    <p>The list of songs that the app knows about.  If you have other Rockie songs on your computer the app will do its best to sort them out.  If you let us know any song titles that are missing we can add them as we go. </p>
-                    <p><a class="btn" href="tracks.html">View details &raquo;</a></p>
-               </div>
-                <div class="span4">
-                    <h2>Gig Map</h2>
-                    <p>A map of the gigs that the Newbury, Thatcham, Wallingford and Didcot Rock Choirs have performed.</p>
-                    <p><a class="btn" href="#">View details &raquo;</a></p>
-                </div>
+            </div>
             </div>
 
             <hr>
@@ -104,14 +89,27 @@
             </footer>
 
         </div> <!-- /container -->
-
+        
+        <script id="track-template" type="text/x-handlebars-template">
+        <div id="{{Title}}-{{Part}}">
+            <div class="tracktitle">
+                <h3>{{Title}} - {{Part}}</h3>
+            </div>
+            <ul class="songproperties">
+                <li class="songTitle">Song Title: {{Title}}</li>
+                <li class="part">Voice Part: {{Part}}</li>
+                <li class="albumTitle">Album: {{AlbumTitle}}</li>
+                <li class="artist">Artist: {{Artist}}</li>
+                <li class="year">Year: {{Year}}</li>
+                <li class="description">Description: {{Description}}</li>
+            </ul>
+        </div>
+        </script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="scripts/jquery-1.9.1.min.js"><\/script>')</script>
-
+        <script>window.jQuery || document.write('<script src="scripts/jquery.min.js"><\/script>')</script>
+        <script src="scripts/handlebars.js"></script>
         <script src="scripts/bootstrap.min.js"></script>
-
-        <script src="js/main.js"></script>
-
+        <script src="/js/trackview.js"></script>
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
