@@ -17,7 +17,7 @@ namespace SongTagger.Hughesdon
         public void PrepareTrackMapping(string folderPath)
         {
             var trackNames = GetMp3Files(folderPath);
-            var decoder = new RockieTrackDecoder();
+            var decoder = new ShowTrackDecoder();
 
             _propertyMapper = AssembleSongPropertyMap(trackNames, decoder);
             
@@ -28,13 +28,13 @@ namespace SongTagger.Hughesdon
             get { return _propertyMapper; }
         }
 
-        private static Dictionary<string, SongProperties> AssembleSongPropertyMap(IEnumerable<string> trackPaths, RockieTrackDecoder decoder)
+        private static Dictionary<string, SongProperties> AssembleSongPropertyMap(IEnumerable<string> trackPaths, ITrackDecoder decoder)
         {
             var propertyMapper = new Dictionary<string, SongProperties>();
             foreach (var trackPath in trackPaths)
             {
                 string trackFileName = Path.GetFileName(trackPath);
-                var songProperties = decoder.DecodeFileTitle(trackFileName);
+                var songProperties = decoder.DecodeFileName(trackFileName);
                 propertyMapper.Add(trackPath, songProperties);
             }
             return propertyMapper;

@@ -18,7 +18,7 @@ namespace SongTagger.Hughesdon.Tests
         public void DecodeFileTitle_KnownTitles_ExtractsTitle(string filename, string title)
         {
             var parser = new RockieTrackDecoder();
-            var properties = parser.DecodeFileTitle(filename);
+            var properties = parser.DecodeFileName(filename);
 
             Assert.AreEqual(title, properties.Title);
         }
@@ -36,7 +36,7 @@ namespace SongTagger.Hughesdon.Tests
         public void DecodeFileTitle_KnownTitles_ExtractsPart(string filename, string part)
         {
             var parser = new RockieTrackDecoder();
-            var properties = parser.DecodeFileTitle(filename);
+            var properties = parser.DecodeFileName(filename);
 
             Assert.AreEqual(part, properties.Part);
         }
@@ -47,7 +47,7 @@ namespace SongTagger.Hughesdon.Tests
         public void DecodeFileTitle_KnownTitles_ExtractsYear(string filename, int year)
         {
             var parser = new RockieTrackDecoder();
-            var properties = parser.DecodeFileTitle(filename);
+            var properties = parser.DecodeFileName(filename);
 
             Assert.AreEqual(year, properties.Year);
         }
@@ -59,7 +59,7 @@ namespace SongTagger.Hughesdon.Tests
             string expectedArtist = "Rock Choir";
 
             var parser = new RockieTrackDecoder();
-            var properties = parser.DecodeFileTitle(knownTrackTitle);
+            var properties = parser.DecodeFileName(knownTrackTitle);
 
             Assert.AreEqual(expectedArtist, properties.Artist);
         }

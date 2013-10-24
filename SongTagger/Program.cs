@@ -36,10 +36,14 @@ namespace SongTagger
 
                 Console.WriteLine("Copying {0} to {1}", songPath, AfterFolderPath);
 
-
-                string afterFilePath = Path.Combine(AfterFolderPath,
-                                                    songProperties.Title + " - " + songProperties.Part +
-                                                    Path.GetExtension(songPath));
+                bool rename = false;
+                string afterFilePath = Path.Combine(AfterFolderPath, Path.GetFileName(songPath));
+                if (rename)
+                {
+                    afterFilePath = Path.Combine(AfterFolderPath,
+                                                        songProperties.Title + " - " + songProperties.Part +
+                                                        Path.GetExtension(songPath));
+                }
                 File.Copy(songPath, afterFilePath, true);
 
                 var afterFile = new FileInfo(afterFilePath);

@@ -1,4 +1,5 @@
-﻿using TagLib;
+﻿using System.IO;
+using TagLib;
 
 namespace SongTagger.Hughesdon.TitleFormatters
 {
@@ -20,7 +21,7 @@ namespace SongTagger.Hughesdon.TitleFormatters
                     Artists = GetArtists(),
                     Comment = GetComment(),
                     Genre = GetGenre(),
-                    Pictures = GetPicture(),
+                    Picture = GetPicture(),
                     Year = GetYear()
                 };
             return data;
@@ -31,12 +32,16 @@ namespace SongTagger.Hughesdon.TitleFormatters
             return new []{"Pop, Rock, Motown"};
         }
 
-        private IPicture[] GetPicture()
+        private IPicture GetPicture()
         {
-            return new IPicture[]
-                {
-                    new Picture(@"c:\temp\pic.jpg")
-                };
+            string path = @"..\..\..\lib\rockie200.jpg";
+            var picture = new Picture(path);
+            byte[] content = System.IO.File.ReadAllBytes(path);
+            using (var ms = new MemoryStream(content))
+            {
+                picture.Data = TagLib.ByteVector.FromStream(ms);
+            }
+            return picture;
         }
 
         public string GetTitle()

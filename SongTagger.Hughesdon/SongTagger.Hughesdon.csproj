@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Constants\SearchPatterns.cs" />
     <Compile Include="Constants\Title.cs" />
+    <Compile Include="Decoders\ITrackDecoder.cs" />
+    <Compile Include="Decoders\ShowTrackDecoder.cs" />
     <Compile Include="PropertyApplier.cs" />
     <Compile Include="Decoders\RockieTrackDecoder.cs" />
     <Compile Include="SongProperties.cs" />

@@ -4,13 +4,13 @@ using SongTagger.Hughesdon.Extensions;
 
 namespace SongTagger.Hughesdon.Decoders
 {
-    public class RockieTrackDecoder : ITrackDecoder
+    public class ShowTrackDecoder : ITrackDecoder
     {
-        readonly string[] _voiceParts = "Full Choir With Solo,Full Choir,Upper Alto,Lower Alto,Alto,Upper Bass,Lower Bass,Medium,Bass,Upper Soprano,Lower Soprano,Soprano,Upper Sop,Lower Sop,Sop,Backing Track,L-R Performance,Performance,Stereo".Split(',');
+        readonly string[] _voiceParts = "Backing Track,L-R Performance,L R Performance,Performance,Stereo,L-R Show,LR SHOW,SHOW L-R".Split(',');
 
         private const string ArtistName = "Rock Choir";
         private const string AlbumTitle = "Rock Choir Tracks";
-
+  
         public SongProperties DecodeFileName(string filename)
         {
             foreach (string voicePart in _voiceParts)
@@ -20,32 +20,19 @@ namespace SongTagger.Hughesdon.Decoders
                 {
                     var title = ExtractTitle(filename, indexOfPart);
 
-                    var songPart = ExtractSongPart(filename, indexOfPart, voicePart);
+                    var songPart = ExtractSongSuffix(filename, indexOfPart, voicePart);
 
                     int year = ExtractSongYear(filename);
 
-                    var props = new SongProperties
-                        {
-                            Part = songPart,
-                            Title = title,
-                            Year = year,
-                            AlbumTitle = AlbumTitle,
-                            Artist = ArtistName
-                        };
+                    var props = new SongProperties {Part = songPart, Title = title, Year = year, AlbumTitle = AlbumTitle, Artist = ArtistName};
                     return props;
                 }
 
             }
-
-            var colour = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(filename);
-            Console.ForegroundColor = colour;
-
             return new SongProperties {Title = filename, Part = ""};
         }
 
-        private int ExtractSongYear(string filename)
+        public int ExtractSongYear(string filename)
         {
             if (filename.IndexOf("2012", StringComparison.Ordinal) > 0)
             {
@@ -54,9 +41,10 @@ namespace SongTagger.Hughesdon.Decoders
             return 2013;
         }
 
-        private static string ExtractSongPart(string filename, int indexOfPart, string voicePart)
+        private static string ExtractSongSuffix(string filename, int indexOfPart, string voicePart)
         {
             string songPart = filename.Substring(indexOfPart, voicePart.Length);
+
             return songPart.ToTitleCase();
         }
 

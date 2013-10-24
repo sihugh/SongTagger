@@ -15,6 +15,6 @@ namespace SongTagger.Hughesdon
         public uint Year { get; set; }
         public string Comment { get; set; }
         public string[] Genre { get; set; }
-        public IPicture[] Pictures { get; set; }
+        public IPicture Picture { get; set; }
     }
 }
