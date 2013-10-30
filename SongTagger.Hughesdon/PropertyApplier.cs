@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Net.Mime;
 using TagLib;
 using TagLib.Id3v2;
 using TagLib.Mpeg;
