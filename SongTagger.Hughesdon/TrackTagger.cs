@@ -16,7 +16,7 @@ namespace SongTagger.Hughesdon
         public void PrepareTrackMapping(string folderPath)
         {
             var trackNames = GetMp3Files(folderPath);
-            var decoder = new ShowTrackDecoder();
+            var decoder = new RockieTrackDecoder();
 
             _propertyMapper = AssembleSongPropertyMap(trackNames, decoder);
             
